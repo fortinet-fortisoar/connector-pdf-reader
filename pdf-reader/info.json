@@ -62,6 +62,15 @@
               }
             ]
           }
+        },
+        {
+            "title": "Password",
+            "type": "password",
+            "name": "password",
+            "required": false,
+            "visible": true,
+            "editable": true,
+            "tooltip": "Password to access the pdf"
         }
       ],
       "output_schema": {
@@ -129,6 +138,15 @@
           "type": "integer",
           "tooltip": "Page Number of the specific PDF document that you want to read using PDF reader.",
           "description": "Page Number of the specific PDF document that you want to read using PDF reader."
+        },
+        {
+            "title": "Password",
+            "type": "password",
+            "name": "password",
+            "required": false,
+            "visible": true,
+            "editable": true,
+            "tooltip": "Password to access the pdf"
         }
       ],
       "output_schema": {
@@ -138,5 +156,3 @@
     }
   ]
 }
-
-

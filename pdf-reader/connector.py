@@ -20,6 +20,3 @@ class PDFReader(Connector):
         except Exception as e:
             logger.exception("An exception occurred {}".format(e))
             raise ConnectorError(e)
-
-
-
