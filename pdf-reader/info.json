@@ -1,0 +1,142 @@
+{
+  "name": "pdf-reader",
+  "label": "PDF Reader",
+  "description": "PDF Reader connector reads PDF documents and extract text.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "version": "1.0.1",
+  "category": "Document Reader",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.1/pdf-reader/215/pdf-reader-v1-0-1",
+  "configuration": {},
+  "operations": [
+    {
+      "operation": "read_all_pages",
+      "title": "Read all Pages",
+      "description": "Reads all the pages of the PDF document whose file name and path you have specified.",
+      "category": "investigation",
+      "annotation": "read_all_pages",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "FortiSOAR File IRI/Filepath",
+          "name": "type",
+          "tooltip": "Select whether you want to specify the FortiSOAR™ file IRI or path of the PDF file that you want to read using PDF reader.",
+          "description": "Select whether you want to specify the FortiSOAR™ file IRI or path of the PDF file that you want to read using PDF reader.",
+          "type": "select",
+          "options": [
+            "Filepath",
+            "FortiSOAR File IRI"
+          ],
+          "value": "FortiSOAR File IRI",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "onchange": {
+            "Filepath": [
+              {
+                "title": "Filepath",
+                "name": "file_path",
+                "type": "text",
+                "visible": true,
+                "editable": true,
+                "required": true,
+                "description": "If you select Filepath, then you must specify the complete file path of the PDF file that you want to read using PDF reader.",
+                "tooltip": "If you select Filepath, then you must specify the complete file path of the PDF file that you want to read using PDF reader. files under /tmp directory",
+                "placeholder": "Eg. 5af00c658289bb5618193f42"
+              }
+            ],
+            "FortiSOAR File IRI": [
+              {
+                "title": "IRI",
+                "name": "file_iri",
+                "tooltip": "If you select FortiSOAR File IRI, then you must specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader.",
+                "description": "If you select FortiSOAR File IRI, then you must specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader.",
+                "type": "text",
+                "visible": true,
+                "editable": true,
+                "required": true,
+                "placeholder": "Eg. /api/3/files/5af00c658289bb5618193f42"
+              }
+            ]
+          }
+        }
+      ],
+      "output_schema": {
+        "pages": "",
+        "filename": ""
+      }
+    },
+    {
+      "operation": "read_page",
+      "title": "Read a Page",
+      "description": "Reads a specific page of the PDF document whose file name and path, and page number, you have specified.",
+      "category": "investigation",
+      "annotation": "read_page",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "FortiSOAR File IRI/Filepath",
+          "name": "type",
+          "tooltip": "Select whether you want to specify the FortiSOAR™ file IRI or path of the PDF file that you want to read using PDF reader.",
+          "description": "Select whether you want to specify the FortiSOAR™ file IRI or path of the PDF file that you want to read using PDF reader.",
+          "type": "select",
+          "options": [
+            "Filepath",
+            "FortiSOAR File IRI"
+          ],
+          "value": "FortiSOAR File IRI",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "onchange": {
+            "Filepath": [
+              {
+                "title": "Filepath",
+                "name": "file_path",
+                "type": "text",
+                "visible": true,
+                "editable": true,
+                "required": true,
+                "description": "If you select Filepath, then you must specify the complete file path of the PDF file that you want to read using PDF reader.",
+                "tooltip": "If you select Filepath, then you must specify the complete file path of the PDF file that you want to read using PDF reader. files under /tmp directory",
+                "placeholder": "Eg. 5af00c658289bb5618193f42"
+              }
+            ],
+            "FortiSOAR File IRI": [
+              {
+                "title": "IRI",
+                "name": "file_iri",
+                "tooltip": "If you select FortiSOAR File IRI, then you must specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader.",
+                "description": "If you select FortiSOAR File IRI, then you must specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader.",
+                "type": "text",
+                "visible": true,
+                "editable": true,
+                "required": true,
+                "placeholder": "Eg. /api/3/files/5af00c658289bb5618193f42"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Page Number",
+          "name": "page_num",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Page Number of the specific PDF document that you want to read using PDF reader.",
+          "description": "Page Number of the specific PDF document that you want to read using PDF reader."
+        }
+      ],
+      "output_schema": {
+        "pages": "",
+        "filename": ""
+      }
+    }
+  ]
+}
+
+
