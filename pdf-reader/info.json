@@ -5,11 +5,11 @@
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "category": "Document Reader",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.1/pdf-reader/215/pdf-reader-v1-0-1",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.2/pdf-reader/215/pdf-reader-v1-0-2",
   "configuration": {},
   "operations": [
     {
