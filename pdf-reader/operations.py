@@ -17,10 +17,10 @@ from integrations import settings
 logger = get_logger('pdf-reader')
 
 
-def extract_text_by_page(pdf_path):
+def extract_text_by_page(pdf_path, password=None):
     try:
         with open(pdf_path, 'rb') as fh:
-            for page in PDFPage.get_pages(fh, caching=True, check_extractable=True):
+            for page in PDFPage.get_pages(fh, password=password, caching=True, check_extractable=True):
                 resource_manager = PDFResourceManager()
                 fake_file_handle = io.StringIO()
                 converter = TextConverter(resource_manager, fake_file_handle)
@@ -35,10 +35,11 @@ def extract_text_by_page(pdf_path):
         raise ConnectorError(e)
 
 
-def extract_text_per_page(pdf_path, page_num):
+def extract_text_per_page(pdf_path, page_num, password=None):
     try:
         with open(pdf_path, 'rb') as fh:
-            for pagenumber, page in enumerate(PDFPage.get_pages(fh, caching=True, check_extractable=True)):
+            for pagenumber, page in enumerate(
+                    PDFPage.get_pages(fh, password=password, caching=True, check_extractable=True)):
                 if pagenumber == (page_num - 1):
                     resource_manager = PDFResourceManager()
                     fake_file_handle = io.StringIO()
@@ -61,18 +62,18 @@ def extract_text(pdf_path):
     return ext_text
 
 
-def export_as_json(pdf_path, page_num=None):
+def export_as_json(pdf_path, page_num=None, password=None):
     try:
         filename = os.path.splitext(os.path.basename(pdf_path))[0]
         data = {'filename': filename}
         data['pages'] = []
         counter = 1
         if page_num == None:
-            for page in extract_text_by_page(pdf_path):
+            for page in extract_text_by_page(pdf_path, password=password):
                 data.get('pages').append(page)
                 counter += 1
             return data
-        for page in extract_text_per_page(pdf_path, page_num):
+        for page in extract_text_per_page(pdf_path, page_num, password=password):
             data.get('pages').append(page)
             return data
     except Exception as e:
@@ -103,7 +104,11 @@ def get_file_location(params):
 def read_all_pages(params):
     try:
         file_path = get_file_location(params)
-        data = export_as_json(file_path)
+        password = params.get('password')
+        # set password to None if no password or an empty string is provided
+        if not password:
+            password = None
+        data = export_as_json(file_path, password=password)
         return data
     except Exception as e:
         logger.error(e)
@@ -114,7 +119,11 @@ def read_page(params):
     try:
         file_path = get_file_location(params)
         page_num = params.get('page_num')
-        return export_as_json(file_path, page_num)
+        password = params.get('password')
+        # set password to None if no password or an empty string is provided
+        if not password:
+            password = None
+        return export_as_json(file_path, page_num, password=password)
     except Exception as e:
         logger.error(e)
         raise ConnectorError(e)
@@ -123,5 +132,3 @@ def read_page(params):
 operations = {
     'read_all_pages': read_all_pages,
     'read_page': read_page}
-
-
