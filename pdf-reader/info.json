@@ -9,7 +9,7 @@
   "category": "Document Reader",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.2/pdf-reader/215/pdf-reader-v1-0-2",
+  "help_online": "",
   "configuration": {},
   "operations": [
     {
@@ -65,12 +65,13 @@
         },
         {
             "title": "Password",
+            "description":"Specify the password to access the pdf.",
             "type": "password",
             "name": "password",
             "required": false,
             "visible": true,
             "editable": true,
-            "tooltip": "Password to access the pdf"
+            "tooltip": "Specify the password to access the pdf."
         }
       ],
       "output_schema": {
@@ -141,12 +142,13 @@
         },
         {
             "title": "Password",
+            "description":"Specify the password to access the pdf.",
             "type": "password",
             "name": "password",
             "required": false,
             "visible": true,
             "editable": true,
-            "tooltip": "Password to access the pdf"
+            "tooltip": "Specify the password to access the pdf."
         }
       ],
       "output_schema": {
