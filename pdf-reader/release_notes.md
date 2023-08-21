@@ -1,2 +1,3 @@
-#### What's fixed
-- Fixed the issue with the 'crudhubAuth' import function that caused failures while running the PDF Reader operations.
+#### Following enhancements have been made to the PDF Reader connector in version 1.0.2:
+
+- Added "Password" parameter in "Read all Pages" and "Read a Page" operations.
