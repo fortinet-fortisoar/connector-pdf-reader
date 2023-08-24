@@ -9,7 +9,7 @@
   "category": "Document Reader",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.2/pdf-reader/661/pdf-reader-v1-0-2",
   "configuration": {},
   "operations": [
     {
@@ -23,8 +23,8 @@
         {
           "title": "FortiSOAR File IRI/Filepath",
           "name": "type",
-          "tooltip": "Select whether you want to specify the FortiSOAR™ file IRI or path of the PDF file that you want to read using PDF reader.",
-          "description": "Select whether you want to specify the FortiSOAR™ file IRI or path of the PDF file that you want to read using PDF reader.",
+          "tooltip": "Select whether you want to specify the FortiSOAR™ file IRI or the path of the PDF file that you want to read using PDF reader. You can select from the following options: Filepath or FortiSOAR File IRI.",
+          "description": "Select whether you want to specify the FortiSOAR™ file IRI or the path of the PDF file that you want to read using PDF reader. You can select from the following options: Filepath or FortiSOAR File IRI.",
           "type": "select",
           "options": [
             "Filepath",
@@ -43,8 +43,8 @@
                 "visible": true,
                 "editable": true,
                 "required": true,
-                "description": "If you select Filepath, then you must specify the complete file path of the PDF file that you want to read using PDF reader.",
-                "tooltip": "If you select Filepath, then you must specify the complete file path of the PDF file that you want to read using PDF reader. files under /tmp directory",
+                "description": "Specify the complete file path of the PDF file to read using PDF reader, in the Filepath field.",
+                "tooltip": "Specify the complete file path of the PDF file to read using PDF reader, in the Filepath field. Note: Files under /tmp directory",
                 "placeholder": "Eg. 5af00c658289bb5618193f42"
               }
             ],
@@ -52,8 +52,8 @@
               {
                 "title": "IRI",
                 "name": "file_iri",
-                "tooltip": "If you select FortiSOAR File IRI, then you must specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader.",
-                "description": "If you select FortiSOAR File IRI, then you must specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader.",
+                "tooltip": "Specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader, in the IRI field.",
+                "description": "Specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader, in the IRI field.",
                 "type": "text",
                 "visible": true,
                 "editable": true,
@@ -65,18 +65,18 @@
         },
         {
             "title": "Password",
-            "description":"Specify the password to access the pdf.",
+            "description":"Specify the password to access the PDF file. ",
             "type": "password",
             "name": "password",
             "required": false,
             "visible": true,
             "editable": true,
-            "tooltip": "Specify the password to access the pdf."
+            "tooltip": "Specify the password to access the PDF file."
         }
       ],
       "output_schema": {
         "pages": "",
-        "filename": ""
+        "filename": []
       }
     },
     {
@@ -90,8 +90,8 @@
         {
           "title": "FortiSOAR File IRI/Filepath",
           "name": "type",
-          "tooltip": "Select whether you want to specify the FortiSOAR™ file IRI or path of the PDF file that you want to read using PDF reader.",
-          "description": "Select whether you want to specify the FortiSOAR™ file IRI or path of the PDF file that you want to read using PDF reader.",
+          "tooltip": "Select whether you want to specify the FortiSOAR™ file IRI or the path of the PDF file that you want to read using PDF reader. You can select from the following options: Filepath or FortiSOAR File IRI.",
+          "description": "Select whether you want to specify the FortiSOAR™ file IRI or the path of the PDF file that you want to read using PDF reader. You can select from the following options: Filepath or FortiSOAR File IRI.",
           "type": "select",
           "options": [
             "Filepath",
@@ -110,8 +110,8 @@
                 "visible": true,
                 "editable": true,
                 "required": true,
-                "description": "If you select Filepath, then you must specify the complete file path of the PDF file that you want to read using PDF reader.",
-                "tooltip": "If you select Filepath, then you must specify the complete file path of the PDF file that you want to read using PDF reader. files under /tmp directory",
+                "description": "Specify the complete file path of the PDF file to read using PDF reader, in the Filepath field. ",
+                "tooltip": "Specify the complete file path of the PDF file to read using PDF reader, in the Filepath field. Note: Files under /tmp directory",
                 "placeholder": "Eg. 5af00c658289bb5618193f42"
               }
             ],
@@ -119,8 +119,8 @@
               {
                 "title": "IRI",
                 "name": "file_iri",
-                "tooltip": "If you select FortiSOAR File IRI, then you must specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader.",
-                "description": "If you select FortiSOAR File IRI, then you must specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader.",
+                "tooltip": "Specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader, in the IRI field.",
+                "description": "Specify the IRI of the PDF file in FortiSOAR™ that you want to read using PDF reader, in the IRI field.",
                 "type": "text",
                 "visible": true,
                 "editable": true,
@@ -137,23 +137,23 @@
           "required": true,
           "editable": true,
           "type": "integer",
-          "tooltip": "Page Number of the specific PDF document that you want to read using PDF reader.",
-          "description": "Page Number of the specific PDF document that you want to read using PDF reader."
+          "tooltip": "PSpecify the page Number of the specified PDF document to read using PDF reader. ",
+          "description": "Specify the page Number of the specified PDF document to read using PDF reader. "
         },
         {
             "title": "Password",
-            "description":"Specify the password to access the pdf.",
+            "description":"Specify the password to access the PDF file.",
             "type": "password",
             "name": "password",
             "required": false,
             "visible": true,
             "editable": true,
-            "tooltip": "Specify the password to access the pdf."
+            "tooltip": "Specify the password to access the PDF file."
         }
       ],
       "output_schema": {
         "pages": "",
-        "filename": ""
+        "filename": []
       }
     }
   ]

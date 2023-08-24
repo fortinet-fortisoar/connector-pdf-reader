@@ -30,9 +30,9 @@ def extract_text_by_page(pdf_path, password=None):
                 yield text
                 converter.close()
                 fake_file_handle.close()
-    except Exception as e:
-        logger.error(e)
-        raise ConnectorError(e)
+    except:
+        logger.error("Invalid Password!!!")
+        raise ConnectorError("Invalid Password!!!")
 
 
 def extract_text_per_page(pdf_path, page_num, password=None):
@@ -50,9 +50,9 @@ def extract_text_per_page(pdf_path, page_num, password=None):
                     yield text
                     converter.close()
                     fake_file_handle.close()
-    except Exception as e:
-        logger.error(e)
-        raise ConnectorError(e)
+    except:
+        logger.error("Invalid Password!!!")
+        raise ConnectorError("Invalid Password!!!")
 
 
 def extract_text(pdf_path):
