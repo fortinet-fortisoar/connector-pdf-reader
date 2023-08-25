@@ -15,7 +15,7 @@
     {
       "operation": "read_all_pages",
       "title": "Read all Pages",
-      "description": "Reads all the pages of the PDF document whose file name and path you have specified.",
+      "description": "Reads all the pages of the PDF document whose file IRI and path you have specified.",
       "category": "investigation",
       "annotation": "read_all_pages",
       "enabled": true,
@@ -82,7 +82,7 @@
     {
       "operation": "read_page",
       "title": "Read a Page",
-      "description": "Reads a specific page of the PDF document whose file name and path, and page number, you have specified.",
+      "description": "Reads a specific page of the PDF document whose file IRI and path, and page number, you have specified.",
       "category": "investigation",
       "annotation": "read_page",
       "enabled": true,
